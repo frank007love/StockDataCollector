@@ -1,0 +1,526 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>公開資訊觀測站</title>
+<link href="css/css.css" rel="stylesheet" type="text/css" Media="Screen"/>
+<link href="css/print_css.css" rel="stylesheet" type="text/css" Media="Print"/>
+<link href="css/clickmenu.css"rel="stylesheet" type="text/css"/>
+<!--
+<link href="css/tag.css" rel="stylesheet" type="text/css" />
+<link href="css/tablea.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" language="JavaScript1.2" src="js/menu/stmenu.js"></script>
+-->
+<script type="text/javascript" src="js/mops.js"></script>
+<!--新版選單 2010.03.19 start-->
+<script type="text/javascript" src="js/jquery-1.1.4.pack.js"></script>
+<script type="text/javascript" src="js/jquery.clickmenu.js"></script>
+<!--新版選單 2010.03.19 end-->
+
+</head>
+<body>
+<!--input type=button onclick='ajax_back();' value='back1'-->
+<center>
+<table border="0"><tr><td align="left">
+<form name='fh' style='margin:0;'  action='/mops/web/ajax_quickpgm' method='post' onsubmit='return false;'><input type='hidden' name='menusave' value=''><input type='hidden' name='firstin' value='1'><input type='hidden' name='TYPEK' value='all'><input type='hidden' name='step' value='1'><input type='hidden' name='keyh'><input type='hidden' name='keyhu'><input type='hidden' name='key1h'><input type='hidden' name='keycon' value=''><input type='hidden' name='co_id' ><input type='hidden' name='slth'><input type='hidden' name='slt1h'><input type='hidden' name='keyword1'><input type='hidden' name='TYPEK1'><input type='hidden' name='code1'><input type='hidden' name='checkbtn'><input type='hidden' name='co_id_1'><input type='hidden' name='co_id_2'><input type='hidden' name='sort' value='1'><input type='hidden' name='date' ><input type='hidden' name='noticeKind' ><input type='hidden' name='noticeDate' value='2'><input type='hidden' name='r1' value='1'><input type='hidden' name='funcName' value='t05st10'><input type='hidden' name='Stp' value='MH'><div id="head"><div id="head_02"><a href="/mops/web/index" alt="回首頁"><img src="images/blank.gif" width="232" height="52" border="0"></a></div><div id="head_03"><div id="search_bar"><div id="nav"><a href="#" onclick="showIt2();chantxt6();fh.menusave.value='6';hideIt2('quicksearch');hideIt2('quicksearch2');" id="itm6" style='color:yellow'>個股</a><a href="#" onclick="showIt1();chantxt1();fh.menusave.value='1';hideIt2('quicksearch');hideIt2('quicksearch2');" id="itm1" >資訊項目</a><a href="#" onclick="showIt2();chantxt2();fh.menusave.value='2';hideIt2('quicksearch');hideIt2('quicksearch2');" id="itm2">精華版2.0</a><a href="#" onclick="showIt4();chantxt4();fh.menusave.value='4';hideIt2('quicksearch');hideIt2('quicksearch2');" id="itm4">重大訊息</a></div><div id="search_b1" align='left'><div class="search" align='left'><table><tr><td align='left'><input name="keyword" type="text" class="textbox" id="keyword"  size="45" value='' onkeydown="{if(event.keyCode==13){showsh3('quicksearch','keyword');fh.step.value='0';ajax1(document.fh,'quicksearch');}}" onclick='clskeyword();hideIt2("quicksearch");hideIt2("quicksearch2");'></td><td><div id="quicksearch"  style="display:none;z-index:2;position:absolute;overflow:auto;overflow-x:hidden;height:200px;top:28px;left:0px;width:160px;"></div></td><td><input   type='text' style='display:none' class="textbox" name='keyword3' id='keyword3' size=20 value='' onclick='clskeyword1();hideIt2("quicksearch");hideIt2("quicksearch2");'></td><td><select name="select" id="sltdate" style='display:none' onclick='hideIt2("quicksearch");hideIt2("quicksearch2");'><option selected value='1'>本日</option><option  value='2'>最近3日</option><option  value='3'>最近1週</option><option  value='4'>最近1月</option><option  value='5'>最近3月</option><option  value='6'>最近半年</option><option  value='7'>最近1年</option></select></td><td><select name='select1' style='display:none' id='sltitem' onclick='hideIt2("quicksearch");hideIt2("quicksearch2");'><option selected value='1'>全部</option><option  value='2'>資訊揭露</option><option  value='3'>股務</option><option  value='4'>財會內控</option></select></td><td><input type="button" name="rulesubmit" value=" 搜尋 " onclick="fh.key1h.value=fh.keyword3.value;fh.keyh.value=fh.keyword.value;fh.slth.value=fh.select.value;fh.slt1h.value=fh.select1.value;hideIt2('quicksearch');hideIt2('quicksearch2');goaction(fh.menusave.value);"></td><td><input style='display:none' type="button" name="return" value="代號查詢" id="stockid" onclick="fh.checkbtn.value='0';hideIt2('quicksearch');showsh2('quicksearch2','keyword');fh.step.value='1';fh.keyword1.value='';ajax1(document.fh,'quicksearch2');"></td><td></td></tr></table><div id="quicksearch2" style="z-index:2;position:absolute;overflow:auto;height:200px;max-height:200px;width:620px;display:none;" ></div></div></div><div id="search_txt" class="search_b2" style="z-index:1;"></div></div></div><div id="head_04"><a href="http://emops.twse.com.tw/emops_all.htm"><img src="images/blank.gif" width="89" height="32" border="0" /></a><p><a href="/mops/web/index"><img src="images/blank.gif" width="89" height="32" border="0" /></a></div></div></div></form>
+
+<!--舊版選單，先不要用 2010.03.19
+<div id="menu">
+	<script type="text/javascript" language="JavaScript1.2" src="js/menu/menu.js"></script>
+</div>
+-->
+<!--新版選單 2010.03.19 start-->
+<div id="menu" class="clickMenu">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<script>
+			$(document).ready(function() {
+			<!--document.getElementById('menu1').innerHTML=menu_str;-->
+				$('#list').clickMenu();
+				document.getElementById('list').style.display='block';
+			});
+		</script> 
+		<tr>
+			<td id="menu1">
+				<ul id="list" style="display:none;">
+					<li class = "L00_Pop" id="mm1">基本資料
+					</li>
+					<li class = "L00_Pop" id="mm2">彙總報表
+					</li>
+					<li class = "L00_Pop" id="mm3">股東會及股利
+					</li>
+					<li class = "L00_Pop" id="mm4">公司治理
+					</li>
+					<li class = "L00_Pop" id="mm5">財務報表
+					</li>
+					<li class = "L00_Pop" id="mm6">重大訊息與公告
+					</li>
+					<li class = "L00_Pop" id="mm7">營運概況
+					</li>
+					<li class = "L00_Pop" id="mm8">投資專區
+					</li>
+					<li class = "L00_Pop" id="mm9">認購（售）權證
+					</li>
+					<li class = "L00_Pop" id="mm10">債券
+					</li>
+					<li class = "L00_Pop" id="mm11">資產證券化
+					</li>
+
+				</ul>
+			</td>
+		</tr>
+	</table>
+</div>
+<!--新版選單 2010.03.19 end-->
+<!--end #menu-->
+
+
+<!--以上為選單部分 2010.03.19 -->
+
+<div id="maincontent_in">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td >
+<div id="PageBody">
+<table><tr><td valign="top" style="height:400px">
+<div id="main" >
+<!-- 左邊選單:開始 -->
+<table width="176" border="0" cellpadding="0" cellspacing="0">
+<tr>
+	<td width="176"><span style="cursor: pointer; font-weight: bold; font-size: 13px;" onclick="showhide('level7','img-7')" id="menu1"> <img src="images/minus4.gif" id="img-7"/><a href="#">營運概況</a> </span> </td>
+</tr>
+<tr style="display: inline;" id="level7">
+	<td style="padding-left: 10px;">
+		<img src="images/minus3.gif" id="img-7001"/> <a onclick="showhide('level-7001','img-7001')" target="_self" href="#">每月營收</a><br/>
+		<span style="display: none;" id="level-7001">
+			<span style="padding-left: 15px;">
+				<img src="images/pointer.gif"/><a target="_self" href="t05st10">開立發票及營業收入<br/><span style="padding-left: 32px;">資訊</span></a><br/>
+			</span>
+			<span style="padding-left: 15px;">
+				<img src="images/pointer.gif"/><a target="_self" href="t05st08">各項產品業務營收統<br/><span style="padding-left: 32px;">計表</span></a><br/>
+			</span>
+		</span>
+		<img src="images/minus3.gif" id="img-7002"/> <a onclick="showhide('level-7002','img-7002')" target="_self" href="#">資金貸與及背書保證</a><br/>
+		<span style="display: none;" id="level-7002">
+			<span style="padding-left: 15px;">
+				<img src="images/pointer.gif"/><a target="_self" href="t05st11">背書保證與資金貸放<br/><span style="padding-left: 30px;">餘額資訊</span></a><br/>
+			</span>
+			<span style="padding-left: 15px;">
+				<img src="images/pointer.gif"/><a target="_self" href="t65sb04">資金貸與及背書保證<br/><span style="padding-left: 30px;">明細表資訊</span></a><br/>
+			</span>
+
+		</span>
+		<img src="images/pointer.gif"/><a href="t79sb01">重要子公司月營收、背<br/><span style="padding-left: 15px;">書保證及資金貸放餘額</span></a><br/>
+		<img src="images/minus3.gif" id="img-7003"/> <a onclick="showhide('level-7003','img-7003')" target="_self" href="#">關係人交易專區</a><br/>
+		<span style="display: none;" id="level-7003">
+			<span style="padding-left: 15px;">
+				<img src="images/pointer.gif"/><a target="_self" href="t05st11_q2">背書保證與資金貸放<br/><span style="padding-left: 30px;">餘額明細</span></a><br/>
+			</span>
+			<span style="padding-left: 15px;">
+				<img src="images/pointer.gif"/><a target="_self" href="t65sb04_q2">資金貸與及背書保證<br/><span style="padding-left: 30px;">明細表資訊</span></a><br/>
+			</span>
+			<span style="padding-left: 15px;">
+				<img src="images/pointer.gif"/><a target="_self" href="t79sb01_q2">重要子公司月營收、<br/><span style="padding-left: 30px;">背書保證與資金貸放</span><br/><span style="padding-left: 30px;">餘額</span></a><br/>
+			</span>
+			<span style="padding-left: 15px;">
+				<img src="images/pointer.gif"/><a target="_self" href="t12sc01_q2">月取得或處分資產資<br/><span style="padding-left: 30px;">訊</span></a><br/>
+			</span>
+			<span style="padding-left: 15px;">
+				<img src="images/pointer.gif"/><a target="_self" href="t141sb02">與關係人取得處分資<br/><span style="padding-left: 30px;">產、進貨銷貨、應收</span><br/><span style="padding-left: 30px;">及應付款項相關資訊</span></a><br/>
+			</span>
+			<span style="padding-left: 15px;">
+				<img src="images/pointer.gif"/><a target="_self" href="t141sb03">關係人交易申報數與<br/><span style="padding-left: 30px;">查核（核閱）數差異</span><br/><span style="padding-left: 30px;">說明</span></a><br/>
+			</span>
+		</span>
+		<img src="images/pointer.gif"/><a href="t12sc01_q1">母子公司交互資訊</a><br/>
+		<img src="images/minus3.gif" id="img-7004"/> <a onclick="showhide('level-7004','img-7004')" target="_self" href="#">赴大陸投資資訊</a><br/>
+		<span style="display: none;" id="level-7004">
+			<span style="padding-left: 15px;">
+				<img src="images/pointer.gif"/><a target="_self" href="t05st15">赴大陸投資資訊(實<br/><span style="padding-left: 30px;">際數)</span></a><br/>
+			</span>
+			<span style="padding-left: 15px;">
+				<img src="images/pointer.gif"/><a target="_self" href="t92sb01">赴大陸投資資訊(自<br/><span style="padding-left: 30px;">結數)</span></a><br/>
+			</span>
+		</span>
+
+		<img src="images/minus3.gif" id="img-7005"/> <a onclick="showhide('level-7005','img-7005')" target="_self" href="#">投資海外子公司資訊</a><br/>
+		<span style="display: none;" id="level-7005">
+			<span style="padding-left: 15px;">
+				<img src="images/pointer.gif"/><a target="_self" href="t05st16">投資海外子公司資訊<br/><span style="padding-left: 30px;">(實際數)</span></a><br/>
+			</span>
+			<span style="padding-left: 15px;">
+				<img src="images/pointer.gif"/><a target="_self" href="t92sb03">投資海外子公司資訊<br/><span style="padding-left: 30px;">(自結數)</span></a><br/>
+			</span>
+		</span>
+
+		<img src="images/minus3.gif" id="img-7006"/> <a onclick="showhide('level-7006','img-7006')" target="_self" href="#">財務比率分析</a><br/>
+		<span style="display: none;" id="level-7006">
+			<span style="padding-left: 15px;">
+				<img src="images/pointer.gif"/><a target="_self" href="t12sc01_q3">取得或處分資產之財務資料表</a><br/>
+			</span>
+			<span style="padding-left: 15px;">
+				<img src="images/pointer.gif"/><a target="_self" href="t05st24">營益分析表</a><br/>
+			</span>
+			<span style="padding-left: 15px;">
+				<img src="images/pointer.gif"/><a target="_self" href="t05st22">財務分析資料</a><br/>
+			</span>
+			<span style="padding-left: 15px;">
+				<img src="images/pointer.gif"/><a target="_self" href="t05st27">毛利率</a><br/>
+			</span>
+			<span style="padding-left: 15px;">
+				<img src="images/pointer.gif"/><a target="_self" href="t05st25">存貨周轉率</a><br/>
+			</span>
+			<span style="padding-left: 15px;">
+				<img src="images/pointer.gif"/><a target="_self" href="t05st26">應收帳款周轉率表</a><br/>
+			</span>
+		</span>
+		<img src="images/pointer.gif"/><a href="t15sf">衍生性商品交易資訊</a><br/>
+		
+		<img src="images/minus3.gif" id="img-7007"/> <a onclick="showhide('level-7007','img-7007')" target="_self" href="#">自結損益公告</a><br/>
+		<span style="display: none;" id="level-7007">
+			<span style="padding-left: 15px;">
+				<img src="images/pointer.gif"/><a target="_self" href="t138sb02_q1">自結損益公告-月申報</a><br/>
+			</span>
+			<span style="padding-left: 15px;">
+				<img src="images/pointer.gif"/><a target="_self" href="t138sb02_q2">自結損益公告-季申報</a><br/>
+			</span>
+
+		</span>
+	</td>
+</tr>
+</table>
+
+<!-- 左邊選單:結束 -->
+</div>
+</td><td valign="top">
+<!--div id='sw'><img src="images/pic23.gif" name="pic" hspace="0" vspace="0" border="0" align="top" id='pic' style="cursor: pointer;" onclick="closex();" /></div-->
+<div id='sw'><div id='pic' name="pic"  hspace="0" vspace="0" border="0" align="top" style="cursor: hand; background: url(images/map2.gif) no-repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous; height: 324px; width:14px;background-position:-542px 0px;" onclick="closex();"></div></div>
+</td><td valign="top">
+<div id="nav02">
+<div class="t0"></div>
+<div class="t01" id='caption'><br>&nbsp;&nbsp;&nbsp;開立發票及營業收入資訊</div>
+<div id="bar01">
+<!-- 查詢條件:開始 -->
+<form id="form1" name="form1" action="/mops/web/ajax_t05st10" onsubmit="return false;" method="post">
+<input type="hidden" id="subMenuID" value="[7,7001]">
+
+<table width="775" border="0" cellpadding="0" cellspacing="0" >
+<tr>
+	<!--td class="bar01a" valign="top"><img src="images/bar_b01.gif" width="6"></td-->
+	<td class="bar01a" valign="top" width="6px"><div style="background: url(images/map2.gif) no-repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous; height: 52px; width:6px;background-position:1px 0px;"></div></td>
+	<td class="bar01b" valign="top"><!-- 最新/歷史資料, 公司代號, 年度, 月份 -->
+		<input type="hidden" name="step" value="1">
+		<input type="hidden" name="firstin" value="ture">
+		<input type="hidden" name="off" value="1">
+		<table border="0" cellspacing="0" cellpadding="2">
+		<input type="hidden" name="keyword4">
+		<input type="hidden" name="code1">
+		<input type="hidden" name="TYPEK2">
+		<input type="hidden" name="checkbtn">
+		<input type="hidden" name="queryName" value="co_id">
+		<tr>
+			<input type="hidden" name="TYPEK" value="all">
+			<td><div id="div4" style="background: url(images/map2.gif) no-repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous; height: 11px; width:11px;background-position:-345px 0px;"></div></td>
+			<td><div id="search_bar1">
+				<div class="search">
+					<select id="isnew" name="isnew"><option value="true">最新資料</option><option value="false">歷史資料</option></select>
+				</div>
+			</div></td>
+			<td><div id="div4" style="background: url(images/map2.gif) no-repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous; height: 11px; width:11px;background-position:-345px 0px;"></div></td><td>公司代號<span style='color:red;'>或簡稱</span></td>
+			<td><div id="search_bar1">
+				<div class="search">
+					<input name="co_id" type="text" class="textbox" id="co_id" value="" size="10" onkeydown="{if(event.keyCode==13){document.getElementById('year').focus(); return false;}}"/> 
+				</div>
+			</div></td>
+						<td><div id="search_bar1">
+				<div class="search">
+					<input type="button" value="代號查詢" onclick="showsh2('quicksearch9','showTable9');document.form1.step.value='4';action='/mops/web/ajax_quickpgm';ajax1(this.form,'quicksearch9');">
+				</div>
+			</div></td>
+			<td><div id="div4" style="background: url(images/map2.gif) no-repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous; height: 11px; width:11px;background-position:-345px 0px;"></div></td><td>年度</td>
+			<td><div id="search_bar1">
+				<div class="search">
+					<input name="year" type="text" class="textbox" id="year" value="" size="3" maxlength="3" onkeydown="{if(event.keyCode==13){document.getElementById('month').focus(); return false;}}"/> 
+				</div>
+			</div></td>
+			<td><div id="div4" style="background: url(images/map2.gif) no-repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous; height: 11px; width:11px;background-position:-345px 0px;"></div></td><td>月份</td>
+			<td><div id="search_bar1">
+				<div class="search">
+					<select name="month" id="month">
+						<option value=""></option>
+						<option value="01">1</option>
+						<option value="02">2</option>
+						<option value="03">3</option>
+						<option value="04">4</option>
+						<option value="05">5</option>
+						<option value="06">6</option>
+						<option value="07">7</option>
+						<option value="08">8</option>
+						<option value="09">9</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+					</select>
+				</div>
+			</div></td>
+		</tr>
+		</table>
+</td>
+	<td align="right" class="bar01b">&nbsp;</td>
+	<td align="right" class="bar01b" valign="top">
+		<table border="0" cellspacing="0" cellpadding="2">
+		<tr>
+			<td>&nbsp;&nbsp;&nbsp;</td>
+			<td><div id="search_bar1">
+				<div class="search">
+				<!-- <input class="button" type="submit" name="rulesubmit2" value=" 搜尋 "> -->
+				<!-- <input type="submit" dojoType="struts:Bind" events="onclick" value=" 搜尋 " validate="false" ajaxAfterValidation="false" id="btn1" class="button" name="rulesubmit2" targets="table01" showLoading="false"/> -->
+				<input type="button" value=" 搜尋 " onclick="javascript:doAction();hideIt2('quicksearch9');ajax1(document.form1,'table01');"/>
+				</div>
+			</div></td>
+		</tr>
+		</table>
+	</td>
+	<!--td class="bar01a" valign="top"><img src="images/bar_b03.gif" width="6"></td-->
+	<td class="bar01a" valign="top" width="6px"><div style="background: url(images/map2.gif) no-repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous; height: 52px; width:6px;background-position:-72px 0px;"></div></td>
+</tr>
+</table>
+</form>
+<!-- 查詢條件:結束 -->
+</div>
+
+
+<div id="table_ess">
+  <table id="showTable9" border="0" cellspacing="0" cellpadding="2">
+    <tr>
+      <!--th align="left"><a href="javascript:print();"><img src="images/bu_01.gif" border="0"></a> <a href="javascript:outputNewWindow();"><img src="images/bu_02.gif" border="0"></a> <a href="javascript:reportError();"><img src="images/bu_04.gif" border="0"></a> </th-->
+      <!--th align="left" width="80px"><a href="javascript:print();"><div style="background: url(images/map01.jpg) no-repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous; height: 27px; width:79px;background-position:-684px -81px;"></div></a></th><th width="80px"><a href="javascript:outputNewWindow();"><div style="background: url(images/map01.jpg) no-repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous; height: 27px; width:79px;background-position:-684px -54px;"></div></a></th><th width="80px"><a href="javascript:reportError();"><div style="background: url(images/map01.jpg) no-repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous; height: 27px; width:79px;background-position:-684px -27px;"></div></a></th><th  width="80px"><a href="javascript:void(0)" onclick="ajax_back();"><div style="background: url(images/map01.jpg) no-repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous; height: 27px; width:79px;background-position:-684px 0px;"></div></a></th-->
+	  <th align="left" width="80px"><a href="javascript:outputNewWindowPrint();"><img src="images/bu_01.gif" alt="列印網頁" border=0></img></a></th><th width="80px"><a href="javascript:outputNewWindow();"><img src="images/bu_02.gif" alt="開新視窗" border=0></img></a></th><th width="80px"><a href="javascript:reportError();"><img src="images/bu_04.gif" alt="問題回報" border=0></img></a></th><th width="80px"><a id='ajax_back_button' href="javascript:void(0)" onclick="ajax_back();" style="visibility:hidden;"><img src="images/bu_05.gif" alt="回上頁" border=0></img></a></th>
+      <th><table border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <!--td><img src="images/txt_b01.gif"><a href="javascript:doZoom('fontSize1')"><img id="fontSize1" src="images/txt_b02_1.gif"></a><a href="javascript:doZoom('fontSize2')"><img id="fontSize2" src="images/txt_b02_2.gif"></a><a href="javascript:doZoom('fontSize3')"><img id="fontSize3" src="images/txt_b02_3.gif"></a><a href="javascript:doZoom('fontSize4')"><img id="fontSize4" src="images/txt_b02_4.gif"></a><img src="images/txt_b03.gif"></div></td--> 
+		  <td width="650px"></td><!--<td width="70px"><div style="background: url(images/map2.gif) no-repeat ; -moz-background-clip: border; -moz-background-origin: padding; height: 27px; width:70px;background-position:-1345px 0px;"></div></td><td width="14px"><a href="javascript:doZoom('fontSize1')"><div id="fontSize1" style="background: url(images/map2.gif) no-repeat ; -moz-background-clip: border; -moz-background-origin: padding; height: 27px; width:14px;background-position:-1415px 0px;"></div></a></td><td width="13px"><a href="javascript:doZoom('fontSize2')"><div id="fontSize2" style="background: url(images/map2.gif) no-repeat ; -moz-background-clip: border; -moz-background-origin: padding; height: 27px; width:13px;background-position:-1446px 0px;"></div></a></td><td width="13px"><a href="javascript:doZoom('fontSize3')"><div id="fontSize3" style="background: url(images/map2.gif) no-repeat ; -moz-background-clip: border; -moz-background-origin: padding; height: 27px; width:13px;background-position:-1476px 0px;"></div></a></td><td width="13px"><a href="javascript:doZoom('fontSize4')"><div id="fontSize4" style="background: url(images/map2.gif) no-repeat ; -moz-background-clip: border; -moz-background-origin: padding; height: 27px; width:13px;background-position:-1506px 0px;"></div></td><t></a></td><td width="9px"><div style="background: url(images/map2.gif) no-repeat ; -moz-background-clip: border; -moz-background-origin: padding; height: 27px; width:9px;background-position:-1536px 0px;"></div></td><td></td></div></td>-->
+        </tr>
+      </table></th>
+    </tr>
+  </table>
+</div>
+<div id="zoom"><div
+                   id="table01"         
+    
+    
+    
+    ><center><H3>查無此公司資料<H3></center>
+</div>
+  <br></div>
+</td></tr></table>
+</DIV></tr>
+</table>
+</div><!--end #maincontent_in-->
+
+
+<div id="footer">
+   <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <th>
+		<div class="text1" id="text1" align="center">
+			<a href='http://www.tdcc.com.tw/stockvote/index.htm' target='_blank'>電子投票</a>│
+			<a href='http://www.sfb.gov.tw/Layout/main_ch/index.aspx?frame=5' target='_blank'>不繼續公開發行</a>│
+			<a href='/server-java/t39sb01' target='_blank'>市場公告</a>│
+			<a href='http://www.sfi.org.tw/EDIS/' target='_blank'>資訊揭��評鑑</a>│
+<!--			<a href='/mops/web/linkmops.htm' target='_blank'>歡迎連結</a>│	-->
+			<a href='http://mopsov.twse.com.tw' target='_blank'>連結舊版</a>│
+			<a href='mailto:fabien@twse.com.tw'>聯絡我們</a>│
+			<a href='/mops/web/t146sb08'>網站地圖</a>|
+			<a href='/nas/MOPS_HandBook.doc' target='_MOPS_handbook'><font color='#FF732F'>網站使用說明</font></a>|
+			<a href='/nas/MOPS_List.xls' target='_MOPS_list'><font color='#FF732F'>新舊版項目對照</font></a>
+		</div>
+	</th>
+  </tr>
+</table>
+</div><!--end #footer-->
+</td></tr></table></center>
+<div id="quicksearch9" style="position:absolute;z-index:3;overflow:auto;width:620px;max-height:200px;display:none;"></div>
+</body>
+<script type="text/javascript">
+	function chantxt11(){ //資訊項目
+		document.getElementById("itm1").style.color = "yellow";
+		document.getElementById("itm2").style.color = "white";
+//		document.getElementById("itm3").style.color = "white";
+		document.getElementById("itm4").style.color = "white";
+		//document.getElementById("itm5").style.color = "white";
+	
+	}
+	function chantxt21(){ //個股
+		document.getElementById("itm1").style.color = "white";
+		document.getElementById("itm2").style.color = "yellow";
+//		document.getElementById("itm3").style.color = "white";
+		document.getElementById("itm4").style.color = "white";
+		//document.getElementById("itm5").style.color = "white";
+	
+	}
+/*
+	function chantxt31(){ //精華版
+		document.getElementById("itm3").style.color = "yellow";
+
+		document.getElementById("itm1").style.color = "white";
+		document.getElementById("itm2").style.color = "white";
+		document.getElementById("itm4").style.color = "white";
+		//document.getElementById("itm5").style.color = "white";
+	
+	}
+*/
+	function chantxt41(){ //重大訊息
+		document.getElementById("itm4").style.color = "yellow";
+
+		document.getElementById("itm1").style.color = "white";
+		document.getElementById("itm2").style.color = "white";
+//		document.getElementById("itm3").style.color = "white";
+		//document.getElementById("itm5").style.color = "white";
+	
+	}
+/*
+	function chantxt51(){ //公告
+		document.getElementById("itm5").style.color = "yellow";
+
+		document.getElementById("itm1").style.color = "white";
+		document.getElementById("itm2").style.color = "white";
+		document.getElementById("itm3").style.color = "white";
+		document.getElementById("itm4").style.color = "white";
+	
+	}
+*/
+	function showIt61(){ //預設
+		//document.getElementById("keyword").value ="彙總表";
+		document.getElementById("keyword").value = "請輸入報表名稱關鍵字";
+	}
+	function showIt51(){ //公告
+		document.getElementById("search_txt").style.display = "none";
+		//document.getElementById("selflike").style.display = "none";
+		//document.getElementById("keyword").value = "請輸入公司代號";
+		document.getElementById("stockid").style.display = "inline";
+		document.getElementById("sltdate").style.display = "inline";
+		document.getElementById("sltitem").style.display = "inline";
+		document.getElementById("keyword3").style.display = "none";
+		document.getElementById("keyword").size = "20";
+
+	}
+
+	function showIt41(){ //重大訊息
+		document.getElementById("search_txt").style.display = "inline";
+		//document.getElementById("selflike").style.display = "none";
+		//document.getElementById("keyword").value = "請輸入公司代號";
+		document.getElementById("stockid").style.display = "inline";
+		document.getElementById("sltdate").style.display = "inline";
+		document.getElementById("sltitem").style.display = "none";
+		document.getElementById("keyword3").style.display = "inline";
+		//document.getElementById("keyword3").value = "請輸入關鍵字";
+		document.getElementById("keyword").size = "20";
+		showBanner("1");
+	}
+	function showIt31(){ //精華版
+		document.getElementById("search_txt").style.display = "none";
+		//document.getElementById("selflike").style.display = "none";
+		//document.getElementById("keyword").value = "台積電";
+		document.getElementById("stockid").style.display = "inline";
+		document.getElementById("sltdate").style.display = "none";
+		document.getElementById("sltitem").style.display = "none";
+		document.getElementById("keyword3").style.display = "none";
+		document.getElementById("keyword").size = "45";
+
+	}
+
+	function showIt21(){ //個股
+		document.getElementById("search_txt").style.display = "none";
+		//document.getElementById("selflike").style.display = "none";
+		//document.getElementById("keyword").value = "台積電";
+		document.getElementById("stockid").style.display = "inline";
+		document.getElementById("sltdate").style.display = "none";
+		document.getElementById("sltitem").style.display = "none";
+		document.getElementById("keyword3").style.display = "none";
+		document.getElementById("keyword").size = "45";
+
+	}
+	function showIt11(){ //資訊項目
+		document.getElementById("search_txt").style.display = "inline";
+		//document.getElementById("keyword").value ="彙總表";
+		//document.getElementById("selflike").style.display = "none";
+		document.getElementById("stockid").style.display = "none";
+		document.getElementById("sltdate").style.display = "none";
+		document.getElementById("sltitem").style.display = "none";
+		document.getElementById("keyword3").style.display = "none";
+		document.getElementById("keyword").size = "45";
+		showBanner("0");
+	}
+	function parammenu(){
+		//alert(document.fh.menusave.value);
+		if (document.fh.menusave.value=="1"){
+			showIt11();
+			chantxt11();
+
+		}else if (document.fh.menusave.value=="2"){
+			showIt21();
+			chantxt21();
+
+		}else if (document.fh.menusave.value=="3"){
+			showIt31();
+			chantxt31();
+
+		}else if (document.fh.menusave.value=="4" ){
+			showIt41();
+			chantxt41();
+
+		}else if (document.fh.menusave.value=="5"){
+			showIt51();
+			chantxt51();
+
+		}
+		else if (document.fh.menusave.value==""){
+			document.fh.menusave.value="1";
+
+			showIt11();
+			chantxt11();
+			showIt61();
+
+		}
+	}
+
+	window.onload=parammenu;
+	
+</script>
+
+<script>
+function doAction() {
+	if (document.form1.step!=null && document.form1.step!=undefined && document.form1.step.value!='')
+	{
+		if (document.form1.step.value!='0')
+		{
+			document.form1.step.value='1';
+		}
+	}
+	if (document.form1.firstin!=null && document.form1.firstin!=undefined && document.form1.firstin.value!='')
+	{
+		document.form1.firstin.value='1';
+	}
+	var name=document.fh.funcName.value;
+	document.form1.action='/mops/web/ajax_'+name;
+}
+function checkAutoRunScript(){
+	if (document.autoForm!=null && document.autoForm!=undefined && document.autoForm.run.value==''){
+		document.autoForm.run.value='Y';
+		ajax1(document.autoForm,'table01');
+	}
+
+	if (document.autoRunScript!=null && document.autoRunScript!=undefined && document.autoRunScript.run.value!=''){
+		var s = document.autoRunScript.run.value;
+		document.autoRunScript.run.value = '';
+		new function(){
+			eval(s);
+		};
+	}
+
+}
+
+setInterval("checkAutoRunScript()",100);
+</script>
+</html>
+

@@ -1,0 +1,135 @@
+<project name="StockDataCollector" default="build-package" basedir="./">
+	<property name="basedir" value="." />
+	<property name="dir.libs" value="${basedir}/libs" />
+	<property name="dist" value="${basedir}/dist" />
+	<property name="build" value="${basedir}/build" />
+	<property name="dist.libs" value="${dist}/libs" />
+	<property name="classes.dir" value="${build}/classes" />
+	<property name="filename.jar" value="StockDataCollector.jar" />
+	<property name="filename.zip" value="StockDataCollector.zip" />
+	
+	<property name="debug" value="on" />
+	<property name="optimize" value="off" />
+	<property name="test_output" value="off" />
+
+	<path id="classPath">
+		<fileset dir="${dir.libs}">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+
+	<condition property="is.windows">
+		<os family="windows" />
+	</condition>
+
+	<condition property="is.unix">
+		<os family="unix" />
+	</condition>
+
+	<target name="build">
+		<echo>---------Build Start!</echo>
+		<antcall target="clear" />
+		<antcall target="create dir" />
+		<antcall target="compile" />
+		<antcall target="jar" />
+		<echo>----------Build End!</echo>
+	</target>
+
+	<target name="build-jar">
+		<echo>---------Build Start!</echo>
+		<antcall target="clear" />
+		<antcall target="create dir" />
+		<antcall target="compile" />
+		<antcall target="jar" />
+		<echo>----------Build End!</echo>
+	</target>
+
+	<target name="build-package">
+		<echo>---------Build Start!</echo>
+		<antcall target="build-jar" />
+		<antcall target="copy package files" />
+		<antcall target="Zip package" />
+		<echo>----------Build End!</echo>
+	</target>
+
+	<target name="copy package files">
+		<copy todir="${dist.libs}">
+			<fileset dir="${dir.libs}">
+				<include name="**/*.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="${dist}">
+			<fileset dir="${basedir}">
+				<include name="run.bat"/>
+				<include name="config"/>
+				<include name="config/*.*"/>
+			</fileset>
+			<fileset dir="${basedir}/src">
+				<include name="log4j.properties"/>
+			</fileset>			
+			<fileset dir="${basedir}/sqlscript">
+				<include name="**/*.*"/>
+			</fileset>						
+		</copy>
+	</target>
+	
+	<target name="clear" >
+		<delete failonerror="false" includeemptydirs="true">
+			<fileset dir="${build}">
+				<include name="**/*.*"/>
+			</fileset>
+			<fileset dir="${dist}">
+				<include name="**/*"/>
+			</fileset>
+		</delete>
+	</target>
+
+	<target name="create dir">
+		<mkdir dir="${dist}" />
+		<mkdir dir="${build}" />
+		<mkdir dir="${classes.dir}" />
+		<mkdir dir="${dist.libs}" />
+	</target>
+
+	<target name="compile">
+		<javac debug="${debug}" deprecation="${optimize}"  destdir="${classes.dir}" encoding="UTF-8">
+			<classpath refid="classPath" />
+			<src path="src" />
+			<include name="**/*.java"/>
+		</javac>
+		
+		<copy todir="${classes.dir}">
+			<fileset dir="src">
+				<include name="**/*.xml" />
+				<include name="**/*.properties" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="jar">
+		<jar destfile="${dist}/${filename.jar}">
+			<fileset dir="${classes.dir}">
+				<include name="**/*.*" />
+				<exclude name="log4j.properties"/>
+			</fileset>
+		</jar>
+	</target>
+
+	<target name="Zip package">
+		<zip basedir="${dist}" destfile="${dist}/${filename.zip}" >
+			<include name="**/*.*" />
+			<include name="StockDataCollector.jar" />
+			<exclude name="${filename.zip}" />
+		</zip>
+		<delete dir="${dist}" failonerror="false" includeemptydirs="true">
+			<include name="**/*.*" />
+			<include name="**/*" />
+			<include name="*" />
+			<exclude name="reports/**/*.*" />
+			<exclude name="${filename.zip}" />
+			<exclude name="*.jar" />
+			<exclude name="*-src*.zip" />
+		</delete>
+	</target>
+
+</project>

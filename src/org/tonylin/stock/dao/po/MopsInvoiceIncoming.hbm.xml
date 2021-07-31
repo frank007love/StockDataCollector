@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="org.tonylin.stock.dao.po.MopsInvoiceIncoming" 
+    table="mops_invoice_incoming"
+>
+    <meta attribute="class-description" inherit="false">
+       @hibernate.class
+        table="mops_invoice_incoming"
+    </meta>
+
+    <composite-id name="comp_id" class="org.tonylin.stock.dao.po.MopsInvoiceIncomingPK">
+        <meta attribute="field-description" inherit="false">
+           @hibernate.id
+            generator-class="assigned"
+        </meta>
+        <key-property 
+            name="stock" 
+            column="stock" 
+            type="java.lang.String"
+            length="6"
+        >
+            <meta attribute="field-description">
+               @hibernate.property
+                column="stock"
+            </meta> 
+        </key-property>
+        <key-property 
+            name="year" 
+            column="year" 
+            type="java.lang.String"
+            length="2"
+        >
+            <meta attribute="field-description">
+               @hibernate.property
+                column="year"
+            </meta> 
+        </key-property>
+        <key-property 
+            name="month" 
+            column="month" 
+            type="java.lang.String"
+            length="2"
+        >
+            <meta attribute="field-description">
+               @hibernate.property
+                column="month"
+            </meta> 
+        </key-property>
+    </composite-id>    
+
+    <property
+        name="invoice"
+        type="java.lang.String"
+        column="invoice"
+        length="128"
+    >
+        <meta attribute="field-description">
+           @hibernate.property
+            column="invoice"
+            length="128"
+        </meta>    
+    </property>
+    <property
+        name="bi"
+        type="java.lang.String"
+        column="bi"
+        length="128"
+    >
+        <meta attribute="field-description">
+           @hibernate.property
+            column="bi"
+            length="128"
+        </meta>    
+    </property>
+    <property
+        name="cbi"
+        type="java.lang.String"
+        column="cbi"
+        length="128"
+    >
+        <meta attribute="field-description">
+           @hibernate.property
+            column="cbi"
+            length="128"
+        </meta>    
+    </property>
+
+    <!-- Associations -->
+    <!-- derived association(s) for compound key -->
+    <!-- end of derived association(s) -->
+  
+
+</class>
+</hibernate-mapping>
